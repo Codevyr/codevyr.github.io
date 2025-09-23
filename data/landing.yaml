@@ -1,0 +1,99 @@
+# Hero
+hero:
+  enable: true
+  weight: 10
+  template: hero
+
+  # Logo configuration for hero section
+  titleLogo:
+    path: "images"
+    filename: "logo256-notext.png"
+    alt: "Codevyr Logo"
+    width: 60
+    height: 60
+
+  backgroundImage:
+    path: "images/templates/hero"
+    filename:
+      desktop: "gradient-desktop.webp"
+      mobile: "gradient-mobile.webp"
+
+  badge:
+    text: v0.1.0
+    color: primary # primary, secondary, success, danger, warning, info, light, dark
+    pill: false # boolean
+    soft: true # boolean
+
+  title: "Codevyr"
+  subtitle: Code ***analysis*** and ***visualization*** platform.
+
+  image:
+    path: "images" # path to image under configured assets directory. default 'images'
+    filename: "codevyr_screenshot.png" # filename of your hero image (including file extension)
+    alt: "Codevyr Screenshot" # Optional but recommended
+    boxShadow: true # default 'false' (excludes .svg images)
+    rounded: true # round the image corners? default 'false' (excludes .svg images)
+
+  ctaButton:
+    icon: rocket_launch
+    btnText: "Get Started"
+    url: "https://ui.codevyr.com"
+  cta2Button:
+    icon: construction
+    btnText: "Documentation"
+    url: "/docs/overview"
+
+  info: "**Open Source** AGPL Licensed."
+
+featureGrid:
+  enable: true
+  weight: 20
+  template: feature grid
+
+  title: Why choose Codevyr?
+  subtitle: Codevyr helps developers understand and visualize source code of complex software project the way they think of it.
+  items:
+      - title: Lightning Fast Analysis
+        icon: speed
+        description: Pre-indexed codebases enable instant query responses. No waiting - explore your code at the speed of thought.
+        ctaLink:
+          text: learn more
+          url: /docs/
+      
+      - title: Simple Pattern Language
+        icon: code
+        description: Learn Askl's intuitive pattern matching syntax in minutes. Express complex code relationships with elegant, readable queries.
+        ctaLink:
+          text: explore syntax
+          url: /docs/getting-started/
+      
+      - title: Iterative Query Building
+        icon: build_circle
+        description: Start simple and build complexity step by step. Refine your queries iteratively to uncover deeper insights about your codebase.
+        ctaLink:
+          text: view examples
+          url: /docs/examples/
+      
+      - title: Cross-Project Intelligence
+        icon: hub
+        description: Combine logic and patterns across multiple projects. Understand how different codebases relate and interact with each other.
+        ctaLink:
+          text: multi-project guide
+          url: /docs/multi-project/
+      
+      - title: Interactive Code Navigation
+        icon: account_tree
+        description: Navigate through your code using an interactive graph interface. Jump seamlessly between related functions, classes, and modules.
+        ctaLink:
+          text: try navigation
+          url: https://ui.codevyr.com
+      
+      - title: Developer-Focused Views
+        icon: visibility
+        description: Simplify complex code relationships with customizable visualizations. Show what matters to developers, hide implementation noise.
+
+imageCompare:
+  enable: false
+
+imageText:
+  enable: false
