@@ -1,6 +1,8 @@
-baseURL = 'https://codevyr.com/'
+baseURL = 'https://codevyr.github.io/'
 languageCode = 'en-us'
 title = 'Codevyr - Source code analysis and visualization'
+relativeURLs = true
+canonifyURLs = true
 
 [module]
     [[module.imports]]
