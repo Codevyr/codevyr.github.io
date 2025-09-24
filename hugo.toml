@@ -11,6 +11,8 @@ canonifyURLs = true
     [[module.imports]]
         path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
         disable = false
+    [[module.imports]]
+        path = "github.com/divinerites/plausible-hugo"
 
 [params]
     # Site meta - favicon will be generated from logo or use static/favicon.png
@@ -22,4 +24,10 @@ canonifyURLs = true
     # Social and external links
     [params.social]
         github = "codevyr/codevyr"
-    
+
+[params.plausible] # Parameters for Plausible Analytics
+    enable = true
+    dataDomain = "codevyr.com"
+    scriptURL  = "https://plausible.codevyr.com/js/script.js"    # optional
+    #eventAPI   = "https://plausible.codevyr.com/stats/api/event" # optional
+    domain = "codevyr.com"
