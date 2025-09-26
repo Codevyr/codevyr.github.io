@@ -25,6 +25,24 @@ canonifyURLs = true
     [params.social]
         github = "codevyr/codevyr"
 
+# Menu configuration
+[menu]
+    [[menu.primary]]
+        name = "Docs"
+        url = "/docs/"
+        weight = 10
+    
+
+# LotussDocs theme configuration
+[params.lotusdocs]
+    version = "0.2.0"
+    docsRepo = "https://github.com/codevyr/codevyr"
+    docsRepoBranch = "main"
+    docsRepoSubPath = ""
+    editPage = true
+    showToC = true
+    tocSide = "left"
+
 [params.plausible] # Parameters for Plausible Analytics
     enable = true
     dataDomain = "codevyr.com"

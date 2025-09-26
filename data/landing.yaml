@@ -41,7 +41,7 @@ hero:
   cta2Button:
     icon: construction
     btnText: "Documentation"
-    url: "/docs/overview"
+    url: "/docs"
 
   info: "**Open Source** AGPL Licensed."
 
@@ -56,37 +56,37 @@ featureGrid:
       - title: Lightning Fast Analysis
         icon: speed
         description: Pre-indexed codebases enable instant query responses. No waiting - explore your code at the speed of thought.
-        ctaLink:
-          text: learn more
-          url: /docs/
+        # ctaLink:
+        #   text: learn more
+        #   url: /docs/
       
       - title: Simple Pattern Language
         icon: code
         description: Learn Askl's intuitive pattern matching syntax in minutes. Express complex code relationships with elegant, readable queries.
         ctaLink:
           text: explore syntax
-          url: /docs/getting-started/
+          url: /docs/getting-started
       
-      - title: Iterative Query Building
-        icon: build_circle
-        description: Start simple and build complexity step by step. Refine your queries iteratively to uncover deeper insights about your codebase.
-        ctaLink:
-          text: view examples
-          url: /docs/examples/
+      # - title: Iterative Query Building
+      #   icon: build_circle
+      #   description: Start simple and build complexity step by step. Refine your queries iteratively to uncover deeper insights about your codebase.
+      #   ctaLink:
+      #     text: view examples
+      #     url: /docs/examples/
       
-      - title: Cross-Project Intelligence
-        icon: hub
-        description: Combine logic and patterns across multiple projects. Understand how different codebases relate and interact with each other.
-        ctaLink:
-          text: multi-project guide
-          url: /docs/multi-project/
+      # - title: Cross-Project Intelligence
+      #   icon: hub
+      #   description: Combine logic and patterns across multiple projects. Understand how different codebases relate and interact with each other.
+      #   ctaLink:
+      #     text: multi-project guide
+      #     url: /docs/multi-project/
       
       - title: Interactive Code Navigation
         icon: account_tree
         description: Navigate through your code using an interactive graph interface. Jump seamlessly between related functions, classes, and modules.
-        ctaLink:
-          text: try navigation
-          url: https://ui.codevyr.com
+        # ctaLink:
+        #   text: try navigation
+        #   url: https://ui.codevyr.com
       
       - title: Developer-Focused Views
         icon: visibility
