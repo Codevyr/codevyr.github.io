@@ -13,7 +13,7 @@ Welcome to the Codevyr documentation! This section contains comprehensive guides
 New to Codevyr? Start here:
 
 - **[Getting Started](/docs/getting-started)** - Quick start guide to begin using Codevyr
-- **[Askl Syntax](/docs/syntax)** - In-depth description Askl query language syntax
+- **[Askl Syntax](/docs/syntax)** - In-depth description of Askl query language syntax
 
 ## Need Help?
 

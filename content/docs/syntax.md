@@ -1,131 +1,187 @@
 ---
-title: "Askl Query Language"
-description: "Learn Askl syntax "
+title: "Askl Syntax Reference"
+description: "Complete reference for the Askl query language syntax"
 weight: 200
 ---
 
-Askl is a pattern matching source code query language.
+# Askl Syntax Reference
 
-## Query Structure
+Askl is a pattern-matching query language designed for source code analysis. It allows you to find functions, trace dependencies, and build custom views of your codebase.
 
-### Statements and Scopes
+## Overview
 
-Askl queries consist of **statements**, each containing:
+An Askl query consists of **statements** that select and filter code symbols (functions, methods, etc.) and define relationships between them through **scopes**.
 
-- **Command**: A sequence of verbs (e.g., function filters)
-- **Scope**: Child statements that define relationships
-
-Use semicolon to indicate that consecutive verbs belong to different statements:
-
-```
-"foo";
-"bar"
-
-/* vs */
-
-"foo"
-"bar"
-```
-
-### Understanding Scopes
-
-The `{}` syntax creates parent-child relationships:
+### Basic Structure
 
 ```askl
-"foo" {"bar"}
-```
-
-This query:
-1. Finds functions matching "foo"
-2. Finds functions matching "bar" 
-3. **Only shows results if "foo" actually calls "bar"**
-
-If "foo" and "bar" both exist but "foo" doesn't call "bar", no symbols will be displayed.
-
-### Verb System
-
-Function names like `cli.Run` are shortcuts for the `@filter` verb:
-
-```askl
-cli.Run          # Shortcut
-@filter("cli.Run") # Full syntax
-```
-
-### Verbs
-
-Verbs instruct statement what to do. The most important role for the verbs is to filter the symbols (e.g. functions) that are of interest to display. A generic has the following syntax:
-
-```
-@verb(positional1, positionalN, key1=value1, keyN=valueN)
-```
-
-where `@verb` is the name of the verb, followed by a sequence of positional and named parameters.
-
-#### Filter
-
-Filter verb select the symbols whose name matches a specific pattern. The generic syntax looks as follows:
-
-```
-@filter("cli.Run")
-```
-
-As a shortcut, one can just write:
-
-```
-"cli.Run"
-```
-
-This verb will select functions that have tokens `cli` and `Run` in its fully qualified name. The tokens are match exactly and case-sensitively.
-
-Each global-scoped statement needs to have at least one filter verb at some level of nesting.
-
-For example the following statements are valid:
-
-```
-"foo" {};
-{"foo"};
-{{{"foo"}}}
-```
-
-The following statement is not valid:
-
-```
-{{{{}}}}
-```
-
-#### Ignore
-
-Ignore verb instructs the current statement and all nested statement to ignore the symbols that match the pattern. Pattern matching works the same way as for the filter verb. Multiple ignore verbs can be present in the same command.
-
-***Example***. The statement below matches function `tar` and all function called by `tar`, except `foo` and `bar`.
-
-```
-@ignore("foo") @ignore("bar") "tar" {}
-```
-
-#### Preamble
-
-Preamble verb lets to apply all subsequent verbs to the global scope. Preamble is useful, for example, to define globally ignored symbols.
-
-The example below ignores all symbols whose name contains tokens `builtin` and `fmt` globally:
-
-```
-@preamble
-@ignore("builtin")
-@ignore("fmt")
-```
-
-#### Forced
-
-Sometimes index does not show an existing relationship between functions. If it is a bug, please report it, but more often this happens, because a function calls another function through a function pointer determined at runtime. Alternatively, the source code can be so complicated that visualizing it exactly does not help to understand the logic.
-
-In both situations, you can tell the query engine to "imagine" that one function is called by another function.
-
-***Example***. The example below will show connection between functions `foo` and `bar` even if `foo` does not call `bar` in the actual code.
-
-```
-"foo" {
-    !"bar"
+statement1;
+statement2 {
+    nested_statement
 }
 ```
 
+## Core Concepts
+
+### 1. Statements
+
+A **statement** is the fundamental unit of an Askl query. Each statement contains:
+
+- **Commands**: One or more verbs that define what to select or filter
+- **Scope**: Optional nested statements that define relationships
+
+#### Statement Separation
+
+Use semicolons to separate consecutive statements:
+
+```askl
+"foo";          # First statement
+"bar"           # Second statement (semicolon optional at end)
+```
+
+Without semicolons, verbs belong to the same statement:
+
+```askl
+"foo" "bar"     # Single statement with two selector verbs
+```
+
+### 2. Scopes and Relationships
+
+Scopes use `{}` syntax to define parent-child relationships:
+
+```askl
+"parent_function" {
+    "child_function"
+}
+```
+
+**Important**: Scopes only show results if the actual relationship exists in the code. If `parent_function` doesn't call `child_function`, no results are displayed.
+
+#### Scope Types
+
+- **Callee scope**: `parent { child }` - shows what parent calls
+- **Caller scope**: `{ "parent" }` - shows what calls parent
+- **Nested scopes**: `a { b { c } }` - multi-level relationships
+
+### 3. Pattern Matching
+
+Askl uses exact, case-sensitive token matching on fully qualified names:
+
+- `"cli.Run"` matches functions containing both "cli" and "Run" tokens
+- `"cli"` will NOT match "click" (exact matching)
+- Matching works on the complete package path + function name
+
+## Verbs
+
+Verbs are commands that instruct the query engine what to do. They use the syntax:
+
+```askl
+@verb(positional_args, key=value)
+```
+
+### Core Verbs
+
+#### @select (Function Selection)
+
+Selects symbols whose names match a specific pattern.
+
+**Full syntax:**
+```askl
+@select(name="cli.Run")
+```
+
+**Shortcut syntax:**
+```askl
+"cli.Run"
+```
+
+**Pattern matching rules:**
+- Exact, case-sensitive token matching
+- Matches against fully qualified names (package.function)
+- Must contain ALL specified tokens
+
+**Examples:**
+```askl
+"main"          # Functions containing "main"
+"http.Handler"  # Functions containing both "http" and "Handler"
+"user.Create"   # Functions containing both "user" and "Create"
+```
+
+#### @ignore (Symbol Filtering)
+
+Excludes symbols matching a pattern from current and nested statements.
+
+**Syntax:**
+```askl
+@ignore("pattern")
+```
+
+**Examples:**
+```askl
+@ignore("test") "main" {}        # Ignore test functions
+@ignore("builtin") @ignore("fmt") "process" {}  # Multiple ignores
+```
+
+#### @preamble (Global Configuration)
+
+Applies verbs to the global scope, affecting all subsequent statements.
+
+**Syntax:**
+```askl
+@preamble
+@ignore("builtin")
+@ignore("test")
+
+"main"  # This and all following queries ignore builtin and test
+```
+
+**Use cases:**
+- Global ignore patterns
+- Session-wide configuration
+- Reducing noise across all queries
+
+#### @forced (Override Relationships)
+
+Forces display of relationships that don't exist in the actual code.
+
+**Syntax:**
+```askl
+"parent" {
+    !"forced_child"
+}
+```
+
+**When to use:**
+- Function pointer calls not detected by analysis
+- Complex runtime relationships
+- Simplified architectural views
+- Working around analysis limitations
+
+## Query Rules and Validation
+
+### Required Elements
+
+Every global statement must contain at least one selection verb at some nesting level.
+
+**Valid examples:**
+```askl
+"foo" {};           # Direct selection
+{"foo"};           # Selection in scope
+{{{"foo"}}}        # Deeply nested selection
+```
+
+**Invalid example:**
+```askl
+{{{{}}}}           # No selection anywhere
+```
+
+### Statement Structure
+
+```askl
+# Multiple statements
+"statement1";
+"statement2" {
+    "nested"
+};
+"statement3"
+```
