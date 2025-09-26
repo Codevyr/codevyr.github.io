@@ -12,9 +12,8 @@ Welcome to the Codevyr documentation! This section contains comprehensive guides
 
 New to Codevyr? Start here:
 
-- **[Overview](/docs/overview/)** - Learn what Codevyr can do
-- **[Getting Started](/docs/getting-started/)** - Quick start guide to begin using Codevyr
-- **[API Reference](/docs/api/)** - Complete API documentation for developers
+- **[Getting Started](/docs/getting-started)** - Quick start guide to begin using Codevyr
+- **[Askl Syntax](/docs/syntax)** - In-depth description Askl query language syntax
 
 ## Need Help?
 
