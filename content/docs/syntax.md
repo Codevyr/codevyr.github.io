@@ -4,8 +4,6 @@ description: "Complete reference for the Askl query language syntax"
 weight: 200
 ---
 
-# Askl Syntax Reference
-
 Askl is a pattern-matching query language designed for source code analysis. It allows you to find functions, trace dependencies, and build custom views of your codebase.
 
 ## Overview
