@@ -1,23 +1,18 @@
 ---
-title: "Documentation"
+title: "Codevyr Documentation"
 description: "Comprehensive documentation for Codevyr"
 weight: 1
+type: "docs"
+layout: "single"
 ---
-
-# Codevyr Documentation
 
 Welcome to the Codevyr documentation! This section contains comprehensive guides, tutorials, and reference materials to help you make the most of Codevyr's code analysis and visualization capabilities.
 
-## Getting Started
+## Documentation Sections
 
 New to Codevyr? Start here:
 
-- [Overview](/docs/overview/) - Learn what Codevyr can do
-- [Getting Started](/docs/getting-started/) - Quick start guide
-- [Try Live Demo](https://ui.codevyr.com) - Interactive platform
-
-## Documentation Sections
-
+- **[Overview](/docs/overview/)** - Learn what Codevyr can do
 - **[Getting Started](/docs/getting-started/)** - Quick start guide to begin using Codevyr
 - **[API Reference](/docs/api/)** - Complete API documentation for developers
 

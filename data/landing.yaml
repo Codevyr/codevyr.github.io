@@ -41,7 +41,7 @@ hero:
   cta2Button:
     icon: construction
     btnText: "Documentation"
-    url: "/docs/overview"
+    url: "/docs"
 
   info: "**Open Source** AGPL Licensed."
 
