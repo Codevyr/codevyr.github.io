@@ -1,0 +1,40 @@
+{{ $sectionTitle := .Scratch.Get "sectionTitle" }}
+{{ with (index .Site.Data.landing $sectionTitle) }}
+{{ if .enable }}
+<section id="{{ $sectionTitle }}" class="{{ .backgroundClass }}">
+  <div class="container mt-100 mt-60">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <div class="section-title">
+          {{ with .title }}<h4 class="title fw-bold mb-4">{{ . }}</h4>{{ end }}
+          {{ with .subtitle }}<p class="text-muted para-desc mb-4 pb-2 mx-auto">{{ . | markdownify }}</p>{{ end }}
+          {{ with .description }}<p class="text-muted mx-auto mb-0">{{ . | markdownify }}</p>{{ end }}
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-lg-8">
+        <form
+          action="https://buttondown.com/api/emails/embed-subscribe/{{ .form.username }}"
+          method="post"
+          class="embeddable-buttondown-form p-4 rounded-3 border bg-white"
+          onsubmit="plausible('Waitlist Signup')"
+        >
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <label for="bd-email" class="form-label mb-0 text-nowrap">Email</label>
+            <input id="bd-email" type="email" name="email" class="form-control"
+                   placeholder="{{ .form.emailPlaceholder }}" required>
+            <button type="submit" class="btn btn-primary text-nowrap">{{ .form.submitText }}</button>
+          </div>
+
+          <input type="hidden" name="embed" value="1">
+
+          {{ with .form.privacyText }}<p class="text-muted small mt-2 mb-0">{{ . }}</p>{{ end }}
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
