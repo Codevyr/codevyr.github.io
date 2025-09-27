@@ -46,6 +46,6 @@ canonifyURLs = true
 [params.plausible] # Parameters for Plausible Analytics
     enable = true
     dataDomain = "codevyr.com"
-    scriptURL  = "https://plausible.codevyr.com/js/script.js"    # optional
+    scriptURL  = "https://plausible.codevyr.com/js/script.manual.js"    # manual script for custom events
     #eventAPI   = "https://plausible.codevyr.com/stats/api/event" # optional
     domain = "codevyr.com"

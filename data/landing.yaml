@@ -106,7 +106,6 @@ waitlist:
     emailPlaceholder: "you@example.com"
     submitText: "Join Waitlist"
     privacyText: "We respect your privacy. No spam."
-    redirect_to: "https://codevyr.github.io/thanks/"
 
 imageCompare:
   enable: false
