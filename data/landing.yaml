@@ -39,9 +39,9 @@ hero:
     btnText: "Get Started"
     url: "https://ui.codevyr.com"
   cta2Button:
-    icon: construction
-    btnText: "Documentation"
-    url: "/docs"
+    icon: mail_outline
+    btnText: "Join Waitlist"
+    url: "#waitlist"
 
   info: "**Open Source** AGPL Licensed."
 
@@ -91,6 +91,22 @@ featureGrid:
       - title: Developer-Focused Views
         icon: visibility
         description: Simplify complex code relationships with customizable visualizations. Show what matters to developers, hide implementation noise.
+
+waitlist:
+  enable: true
+  weight: 30
+  template: waitlist
+  title: "Join the Waitlist"
+  subtitle: "Be the first to know when Codevyr is ready for use."
+  description: "Get early access to new features and exclusive updates."
+  backgroundClass: "bg-light"
+
+  form:
+    username: "codevyr"
+    emailPlaceholder: "you@example.com"
+    submitText: "Join Waitlist"
+    privacyText: "We respect your privacy. No spam."
+    redirect_to: "https://codevyr.github.io/thanks/"
 
 imageCompare:
   enable: false
