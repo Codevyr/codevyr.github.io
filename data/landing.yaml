@@ -105,7 +105,6 @@ waitlist:
     username: "codevyr"
     emailPlaceholder: "you@example.com"
     submitText: "Join Waitlist"
-    privacyText: "We respect your privacy. No spam."
 
 imageCompare:
   enable: false
