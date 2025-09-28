@@ -10,8 +10,6 @@ _build:
   render: always
 ---
 
-## ✉️ Almost there!
-
 You're just one step away from joining the Codevyr community.
 
 ### What happens next?
