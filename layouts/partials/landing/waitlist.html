@@ -28,18 +28,18 @@
           </div>
 
           <div class="mb-3">
-            <label for="scope" class="form-label">Message Frequency</label>
+            <label for="scope" class="form-label">Message Preferences</label>
             <select name="metadata__scope" id="scope" class="form-select">
-              <option value="news-updates" selected>News and updates</option>
+              <option value="news-updates" selected>News and irregular updates</option>
               <option value="major-releases">Only major releases</option>
             </select>
-            <div class="form-text text-muted small">Choose how often you'd like to hear from us</div>
+            <div class="form-text text-muted small">Select how often you'd like to receive emails</div>
           </div>
 
           <input type="hidden" name="embed" value="1">
 
           <button type="submit" class="btn btn-primary">{{ .form.submitText }}</button>
-          {{ with .form.privacyText }}<p class="text-muted small mt-2 mb-0">{{ . }}</p>{{ end }}
+          <p class="text-muted small mt-2 mb-0">We respect your privacy. No spam.</p>
         </form>
       </div>
     </div>
