@@ -21,15 +21,24 @@
           class="embeddable-buttondown-form p-4 rounded-3 border bg-white"
           onsubmit="plausible('Waitlist Signup')"
         >
-          <div class="d-flex align-items-center gap-3 mb-3">
-            <label for="bd-email" class="form-label mb-0 text-nowrap">Email</label>
+          <div class="mb-3">
+            <label for="bd-email" class="form-label">Email</label>
             <input id="bd-email" type="email" name="email" class="form-control"
                    placeholder="{{ .form.emailPlaceholder }}" required>
-            <button type="submit" class="btn btn-primary text-nowrap">{{ .form.submitText }}</button>
+          </div>
+
+          <div class="mb-3">
+            <label for="scope" class="form-label">Message Frequency</label>
+            <select name="metadata__scope" id="scope" class="form-select">
+              <option value="news-updates" selected>News and updates</option>
+              <option value="major-releases">Only major releases</option>
+            </select>
+            <div class="form-text text-muted small">Choose how often you'd like to hear from us</div>
           </div>
 
           <input type="hidden" name="embed" value="1">
 
+          <button type="submit" class="btn btn-primary">{{ .form.submitText }}</button>
           {{ with .form.privacyText }}<p class="text-muted small mt-2 mb-0">{{ . }}</p>{{ end }}
         </form>
       </div>

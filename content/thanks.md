@@ -16,7 +16,6 @@ Thank you for joining our waitlist! We're glad to have you with us as we build C
 
 ### What happens next?
 
-- **Confirmation Email**: Check your inbox for a subscription confirmation  
 - **Early Access**: Be the first to know when Codevyr is available  
 - **Updates**: Follow our development progress  
 - **Community**: Connect with developers who care about code quality
@@ -24,10 +23,10 @@ Thank you for joining our waitlist! We're glad to have you with us as we build C
 ### While you wait...
 
 - **Try the Demo**: Explore [ui.codevyr.com](https://ui.codevyr.com) to see Codevyr in action  
-- **Stay Connected**: Visit [here](https://codevyr.com) for ongoing updates
+- **Stay Connected**: Check [archives](https://buttondown.com/codevyr/archive/) for past updates
 
 ---
 
-**Questions?** Reach out anytime.  
+**Questions or feedback?** Reach out anytime at [codevyr@gmail.com](mailto:codevyr@gmail.com).
 
 → [**Try the Demo**](https://ui.codevyr.com)
