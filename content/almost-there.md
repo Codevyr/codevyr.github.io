@@ -28,4 +28,6 @@ You're just one step away from joining the Codevyr community.
 
 **Questions or feedback?** Reach out anytime at [codevyr@gmail.com](mailto:codevyr@gmail.com).
 
+**Privacy**: Read our [Privacy Policy](/privacy/) to learn how we handle your data.
+
 → [**Back to Home**](/)

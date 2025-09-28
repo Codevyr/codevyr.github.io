@@ -56,3 +56,6 @@ canonifyURLs = true
     #eventAPI   = "https://plausible.codevyr.com/stats/api/event" # optional
     domain = "codevyr.com"
 
+[params.footer]
+    copyright = "© 20025, Codevyr, Maksym Planeta"
+    version = true

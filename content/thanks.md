@@ -29,4 +29,6 @@ Thank you for joining our waitlist! We're glad to have you with us as we build C
 
 **Questions or feedback?** Reach out anytime at [codevyr@gmail.com](mailto:codevyr@gmail.com).
 
+**Privacy**: Read our [Privacy Policy](/privacy/) to learn how we handle your data.
+
 → [**Try the Demo**](https://ui.codevyr.com)

@@ -9,8 +9,6 @@ _build:
   render: always
 ---
 
-## Privacy Policy
-
 Your privacy is important to us. This page explains what data we collect, why we collect it, and how you can exercise your rights.
 
 ### Data We Collect
