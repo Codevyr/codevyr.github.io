@@ -25,7 +25,8 @@ hero:
     soft: true # boolean
 
   title: "Codevyr"
-  subtitle: Code ***analysis*** and ***visualization*** platform.
+  subtitle: "Stop getting lost jumping to definitions."
+  info: "Understand unfamiliar codebases faster. Query and visualize control flow to see how your project really works."
 
   image:
     path: "images" # path to image under configured assets directory. default 'images'
@@ -35,15 +36,14 @@ hero:
     rounded: true # round the image corners? default 'false' (excludes .svg images)
 
   ctaButton:
-    icon: rocket_launch
-    btnText: "Get Started"
+    icon: play_circle
+    btnText: "Watch Demo"
     url: "https://ui.codevyr.com"
   cta2Button:
     icon: mail_outline
     btnText: "Join Waitlist"
     url: "#waitlist"
 
-  info: "**Open Source** AGPL Licensed."
 
 featureGrid:
   enable: true
@@ -111,3 +111,43 @@ imageCompare:
 
 imageText:
   enable: false
+
+example:
+  enable: true
+  weight: 20
+  template: feature
+
+  title: "How Codevyr Works"
+  subtitle: "From unfamiliar code to clear control flow in three steps."
+
+  items:
+    - icon: code
+      title: "1. Input code"
+      content: |
+        Start with a project or snippet you're trying to understand.
+        Example (Go):
+
+        ```go
+        func main() {
+            greet()
+            add(2, 3)
+        }
+        ```
+      image: "images/example_snippet.png"
+
+    - icon: terminal
+      title: "2. Ask a query"
+      content: |
+        Run a simple query such as:
+
+        ```
+        @call(main)
+        ```
+      image: "images/example_query.png"
+
+    - icon: device_hub
+      title: "3. Explore the graph"
+      content: |
+        Codevyr generates an interactive control flow graph:
+        `main → greet`, `main → add`
+      image: "images/example_graph.png"

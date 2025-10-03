@@ -59,3 +59,7 @@ canonifyURLs = true
 [params.footer]
     copyright = "© 20025, Codevyr, Maksym Planeta"
     version = true
+
+[markup]
+  [markup.highlight]
+    style = "friendly"
