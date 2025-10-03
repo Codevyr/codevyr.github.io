@@ -1,0 +1,63 @@
+{{ $sectionTitle := .Scratch.Get "sectionTitle" }}
+{{ with (index .Site.Data.landing $sectionTitle) }}
+{{ if .enable }}
+<section id="{{ $sectionTitle }}" class="{{ .backgroundClass }}">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold mb-2">How Codevyr Works</h2>
+      <p class="text-muted">From unfamiliar code to clear control flow in three steps.</p>
+    </div>
+
+    <div class="row g-4">
+        <!-- Step 1 -->
+        <div class="col-md-4">
+        <div class="card h-100 shadow-sm bg-body">
+            <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+                <span class="step-badge me-2">1</span>
+                <h5 class="card-title mb-0">Input code</h5>
+            </div>
+            <p class="card-text">Start with a project or snippet you're trying to understand.</p>
+            {{ $code := `package example
+
+func main() {
+    greet()
+    add(2, 3)
+}` }}
+            {{ highlight $code "go" "" }}
+            </div>
+        </div>
+        </div>
+
+      <!-- Step 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm bg-body">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <span class="step-badge me-2">2</span>
+              <h5 class="card-title mb-0">Ask a query</h5>
+            </div>
+            <p class="card-text">Example: show everything called from <code>main</code>.</p>
+            <pre class="mb-0"><code>"main"{}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm bg-body">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <span class="step-badge me-2">3</span>
+              <h5 class="card-title mb-0">Explore the graph</h5>
+            </div>
+            <p class="card-text">Codevyr generates an interactive control-flow graph.</p>
+            <img src="/images/landing-example.png" alt="Control flow graph output" class="img-fluid rounded">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
