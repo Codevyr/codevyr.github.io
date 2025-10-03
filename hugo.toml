@@ -21,6 +21,11 @@ canonifyURLs = true
         target = "content/docs"
 
 [params]
+    description = "Codevyr helps engineering teams query, analyze, and visualize codebases using the Askl language."
+    company = "Codevyr"
+    contactEmail = "codevyr@gmail.com"
+    keywords = ["code analysis", "askl", "developer tools", "code visualization", "graph explorer"]
+    version = "0.1.0"
     # Site meta - favicon will be generated from logo or use static/favicon.png
     [params.meta]
     favicon = true

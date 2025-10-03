@@ -98,7 +98,7 @@ waitlist:
   template: waitlist
   title: "Join the Waitlist"
   subtitle: "Be the first to know when Codevyr is ready for use."
-  description: "Get early access to new features and exclusive updates."
+  # description: "Get early access to new features and exclusive updates."
   backgroundClass: "bg-light"
 
   form:
