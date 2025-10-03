@@ -36,8 +36,8 @@ hero:
     rounded: true # round the image corners? default 'false' (excludes .svg images)
 
   ctaButton:
-    icon: play_circle
-    btnText: "Watch Demo"
+    icon: rocket
+    btnText: "Try Demo"
     url: "https://ui.codevyr.com"
   cta2Button:
     icon: mail_outline
