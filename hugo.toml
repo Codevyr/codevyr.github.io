@@ -54,13 +54,6 @@ canonifyURLs = true
     showToC = true
     tocSide = "left"
 
-[params.plausible] # Parameters for Plausible Analytics
-    enable = true
-    dataDomain = "codevyr.com"
-    scriptURL  = "https://plausible.codevyr.com/js/script.manual.js"    # manual script for custom events
-    #eventAPI   = "https://plausible.codevyr.com/stats/api/event" # optional
-    domain = "codevyr.com"
-
 [params.footer]
     copyright = "© 20025, Codevyr, Maksym Planeta"
     version = true
